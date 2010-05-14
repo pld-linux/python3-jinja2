@@ -12,6 +12,8 @@ Source0:	http://pypi.python.org/packages/source/J/Jinja2/Jinja2-%{version}.tar.g
 URL:		http://pypi.python.org/pypi/Jinja2
 BuildRequires:	python3-devel
 BuildRequires:	python3-distribute
+BuildRequires:	python3-modules
+BuildRequires:	rpm-pythonprov
 %if %{with doc}
 BuildRequires:	sphinx-pdg
 %endif
@@ -37,7 +39,7 @@ ograniczonym środowisku.
 %{__python3} setup.py build
 %if %{with doc}
 cd docs
-make html
+%{__make} html
 rm -rf _build/html/_sources
 %endif
 
