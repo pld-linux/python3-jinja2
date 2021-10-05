@@ -7,18 +7,18 @@
 Summary:	Template engine Jinja2 for Python 3.x
 Summary(pl.UTF-8):	Silnik szablonów Jinja2 dla Pythona 3.x
 Name:		python3-%{module}
-Version:	2.11.3
+Version:	3.0.2
 Release:	1
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/Jinja2
 Source0:	https://files.pythonhosted.org/packages/source/J/Jinja2/Jinja2-%{version}.tar.gz
-# Source0-md5:	231dc00d34afb2672c497713fa9cdaaa
-URL:		http://jinja.pocoo.org/
+# Source0-md5:	059f89375d7ea60eb7013f341f0b89e7
+URL:		https://jinja.palletsprojects.com/en/3.0.x/
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	rpm-pythonprov
-BuildRequires:	python3-devel >= 1:3.5
-BuildRequires:	python3-modules >= 1:3.5
+BuildRequires:	python3-devel >= 1:3.6
+BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-markupsafe >= 0.23
