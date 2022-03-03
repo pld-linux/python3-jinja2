@@ -21,7 +21,7 @@ BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
 %if %{with tests}
-BuildRequires:	python3-markupsafe >= 0.23
+BuildRequires:	python3-markupsafe >= 2.0
 BuildRequires:	python3-pytest
 %endif
 %if %{with doc}
@@ -31,7 +31,7 @@ BuildRequires:	python3-sphinx_issues >= 1.2.0
 BuildRequires:	sphinx-pdg-3 >= 2.1.2
 %endif
 BuildArch:	noarch
-Requires:	python3-modules >= 1:3.5
+Requires:	python3-modules >= 1:3.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
