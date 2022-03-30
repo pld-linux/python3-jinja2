@@ -8,7 +8,7 @@ Summary:	Template engine Jinja2 for Python 3.x
 Summary(pl.UTF-8):	Silnik szablonów Jinja2 dla Pythona 3.x
 Name:		python3-%{module}
 Version:	3.0.2
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/Jinja2
