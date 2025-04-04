@@ -7,23 +7,25 @@
 Summary:	Template engine Jinja2 for Python 3.x
 Summary(pl.UTF-8):	Silnik szablonów Jinja2 dla Pythona 3.x
 Name:		python3-%{module}
-Version:	3.1.2
-Release:	3
+Version:	3.1.6
+Release:	1
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/Jinja2
-Source0:	https://files.pythonhosted.org/packages/source/J/Jinja2/Jinja2-%{version}.tar.gz
-# Source0-md5:	d31148abd89c1df1cdb077a55db27d02
+Source0:	https://files.pythonhosted.org/packages/source/J/Jinja2/jinja2-%{version}.tar.gz
+# Source0-md5:	66d4c25ff43d1deaf9637ccda523dec8
 URL:		https://jinja.palletsprojects.com/en/3.1.x/
 BuildRequires:	python3-devel >= 1:3.7
 BuildRequires:	python3-modules >= 1:3.7
-BuildRequires:	python3-setuptools
+BuildRequires:	python3-build
+BuildRequires:	python3-installer
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	rpm-pythonprov
 %if %{with tests}
 BuildRequires:	python3-babel >= 2.7
 BuildRequires:	python3-markupsafe >= 2.0
 BuildRequires:	python3-pytest
+BuildRequires:	python3-pytest-trio
 %endif
 %if %{with doc}
 BuildRequires:	python3-pallets-sphinx-themes >= 1.2.0
@@ -58,10 +60,10 @@ API documentation for Jinja2 template engine.
 Dokumentacja API silnika szablonów Jinja2.
 
 %prep
-%setup -q -n Jinja2-%{version}
+%setup -q -n jinja2-%{version}
 
 %build
-%py3_build
+%py3_build_pyproject
 
 %if %{with tests}
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
@@ -77,16 +79,16 @@ PYTHONPATH=$(pwd) \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%py3_install
+%py3_install_pyproject
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES.rst LICENSE.rst README.rst
+%doc LICENSE.txt README.md
 %{py3_sitescriptdir}/%{module}
-%{py3_sitescriptdir}/Jinja2-%{version}-py*.egg-info
+%{py3_sitescriptdir}/jinja2-%{version}.dist-info
 
 %if %{with doc}
 %files apidoc
