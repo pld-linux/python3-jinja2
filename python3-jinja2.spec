@@ -15,10 +15,11 @@ Group:		Development/Languages/Python
 Source0:	https://files.pythonhosted.org/packages/source/J/Jinja2/jinja2-%{version}.tar.gz
 # Source0-md5:	66d4c25ff43d1deaf9637ccda523dec8
 URL:		https://jinja.palletsprojects.com/en/3.1.x/
-BuildRequires:	python3-devel >= 1:3.7
-BuildRequires:	python3-modules >= 1:3.7
 BuildRequires:	python3-build
+BuildRequires:	python3-devel >= 1:3.7
+BuildRequires:	python3-flit_core < 4
 BuildRequires:	python3-installer
+BuildRequires:	python3-modules >= 1:3.7
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	rpm-pythonprov
 %if %{with tests}
